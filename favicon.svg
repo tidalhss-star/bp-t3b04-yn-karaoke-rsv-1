@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img">
-  <metadata>BPaaS site identity 0362743f6eca2564</metadata>
-  <rect width="64" height="64" rx="9" fill="hsl(146 76% 38%)"/>
-  <path d="M37 0h27v64H23Z" fill="hsl(310 71% 67%)" opacity="0.82"/>
-  <g transform="rotate(204 32 32)" opacity="0.42"><path d="M13 45c7-23 31-23 38 0" fill="none" stroke="#101418" stroke-width="8" stroke-linecap="round"/></g>
-  <text x="32" y="39" text-anchor="middle" fill="#101418" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="0">YS</text>
+  <title>연남 가라오케 예약</title>
+  <rect width="64" height="64" rx="14" fill="hsl(146 71% 30%)"/>
+  <path d="M64 0v26L38 0Z" fill="hsl(317 68% 59%)" opacity="0.16"/>
+  <g transform="rotate(0 32 32)"><path d="M32 13 50 23v18L32 51 14 41V23Z" fill="none" stroke="hsl(146 24% 96%)" stroke-width="6" stroke-linejoin="round"/><circle cx="32" cy="32" r="6" fill="hsl(317 68% 59%)"/></g>
 </svg>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/3) · t3b04-yn-karaoke-rsv-1</title>
+  <meta name="description" content="t3b04-yn-karaoke-rsv-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://yeonnam-song-info.node-link.shop/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #0b0c10;
+      color: #e5e5e0;
+      font-family: 'Noto Serif KR', serif;
+      line-height: 1.75;
+      padding: 40px;
+    }
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+      border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+      padding-bottom: 32px;
+    }
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-style: italic;
+      color: #c5a880;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    nav { display: flex; gap: 32px; }
+    nav a {
+      color: #999995;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    nav a:hover { color: #c5a880; }
+    main { margin-bottom: 100px; }
+    .label {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      color: #c5a880;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 48px;
+    }
+    .article-body {
+      font-size: 1.15rem;
+      color: #d1d1ca;
+      font-weight: 300;
+      max-width: 780px;
+      margin-bottom: 80px;
+      text-align: justify;
+    }
+    .article-body p { margin-bottom: 28px; }
+    
+    .archive-section {
+      margin-top: 100px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: #c5a880;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+      padding-bottom: 12px;
+    }
+    .archive-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 100px;
+    }
+    .archive-card {
+      text-decoration: none;
+      color: #ffffff;
+      display: block;
+      border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+      padding-bottom: 32px;
+      transition: all 0.3s ease;
+    }
+    .archive-card:hover {
+      border-bottom-color: #c5a880;
+      transform: translateX(8px);
+    }
+    .archive-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      color: #f5f5f0;
+    }
+    .archive-card p {
+      color: #999995;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    /* PBN Recent Posts Feed */
+    .recent-posts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .recent-post-card {
+      background-color: #121317;
+      border: 1px solid rgba(197, 168, 128, 0.15);
+      border-radius: 4px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 240px;
+      transition: all 0.3s ease;
+    }
+    .recent-post-card:hover {
+      border-color: #c5a880;
+      background-color: #16181f;
+      transform: translateY(-2px);
+    }
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #c5a880;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 16px;
+      font-weight: bold;
+    }
+    .post-meta span {
+      border: 1px solid #c5a880;
+      padding: 2px 10px;
+      text-transform: uppercase;
+    }
+    .recent-post-card h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .recent-post-card p {
+      font-size: 0.95rem;
+      color: #bcbcbc;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more {
+      align-self: flex-start;
+      text-decoration: none;
+      color: #c5a880;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .read-more:hover {
+      color: #ffffff;
+    }
+    
+    footer {
+      border-top: 1px solid rgba(197, 168, 128, 0.2);
+      padding-top: 48px;
+      margin-top: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      font-family: 'Playfair Display', serif;
+      color: #555552;
+    }
+    footer a { color: #555552; text-decoration: none; margin-left: 20px; }
+    footer a:hover { color: #c5a880; }
+    
+    @media(max-width: 768px) {
+      header { flex-direction: column; gap: 24px; align-items: flex-start; }
+      h1 { font-size: 2.2rem; }
+      .archive-card h3 { font-size: 1.25rem; }
+      footer { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+  <meta property="og:title" content="글 목록 (1/3) · t3b04-yn-karaoke-rsv-1">
+  <meta property="og:description" content="t3b04-yn-karaoke-rsv-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://yeonnam-song-info.node-link.shop/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="brand">VINYL.YN</a>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="sitemap.xml">SITEMAP</a>
+      </nav>
+    </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 44개 · 1/3 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-001-deqb4l.html">연남 가라오케 예약 vs 연남 가라오케 예약 비교</a>
+        <p class="post-item__summary">연남 지역에서 가라오케를 이용하려면 예약 시스템의 편의성과 정보 공개 수준을 먼저 확인해야 합니다. 온라인 예약 페이지가 직관적인지, 실시간 잔여 시간 확인이 가능한지, 그리고 취소·변경 정책이 명</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005.html">연남 가성비 vs 럭셔리 비교 매트릭스</a>
+        <p class="post-item__summary">자, 다들 주목해봐, bro. 불타는 금요일 밤에 마포 연남동 핫플 골목길에서 2차로 마이크 잡을 룸을 고르려고 하는데, 눈앞에 삐까뻔쩍한 고급 가라오케 라운지와 구석방 실속 가성비 룸들이 뒤엉켜있</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1059.html">연남 가라오케 테이블 매칭, 성비 보장이라는 착각</a>
+        <p class="post-item__summary">연남 가라오케 예약 문의 십중팔구는 성비부터 따진다. 남자 다섯에 여자 다섯 맞춰달라는 요청이다. 이런 식으로 들어오는 테이블은 대부분 분위기가 일찍 꺵한다. 템포가 빠른 자리에서는 각자 짝 찾아서</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-407.html">연남 가라오케, 노래방 점수 매기는 시스템의 맹점</a>
+        <p class="post-item__summary">세상엔 다른 게 다 똑같은데 결과만 다르게 나오는 기계가 있다. 노래방 기계다. 다들 점수에 목을 맨다. 연남 가라오케 예약을 문의하는 전화 통화를 들여다보면 구태여 예약을 하는 이유가 반드시 자리</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0451.html">연남 가라오케 예약 대신 방문하는 을지로 동대문 마사지 풋쌤 동대문점</a>
+        <p class="post-item__summary">편안한 휴식 공간, 전문적인 마사지 기술, 그리고 예약의 편리함이라는 세 가지 핵심 요소를 갖춘 곳을 선별하는 것은 매우 중요합니다. 많은 이들이 저녁 시간을 보낼 장소로 연남 가라오케 예약 등을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0452.html">연남 가라오케 예약 비교 기준과 마포/합정 인디 소셜 라운지 가이드 체크리스트</a>
+        <p class="post-item__summary">혹시 당신은 연남 가라오케 예약만 생각하며 정작 파티의 목적을 잃고 있지는 않으신가요. 마포나 합정 지역에는 개성 있는 분위기를 자랑하는 소규모 공간들이 많습니다. 자신에게 꼭 맞는 라운지를 고르기</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0453.html">연남 가라오케 예약 단계별 지수 성장 클리닉 정보</a>
+        <p class="post-item__summary">연남 가라오케 예약 절차를 이해하는 과정은 비즈니스의 기초 체력을 다지는 것과 유사합니다. 많은 사용자가 단순히 예약만을 고려하지만, 실제로는 시스템의 신뢰도를 판별하는 것이 우선되어야 합니다. 이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0454.html">연남 가라오케 예약 비교로 알아보는 마포 홍대 로컬 럭셔리 밤문화 가이드</a>
+        <p class="post-item__summary">연남 가라오케 예약은 즐거운 저녁 시간을 보장받기 위한 필수적 통과의례입니다. 하지만 많은 이들이 홍대 인근의 수많은 선택지 중에서 어떤 곳이 합리적인지 혼란을 겪곤 합니다. 단순히 비용만 보고 결</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0455.html">연남 가라오케 예약 실수를 줄이는 마포 셔츠룸 리얼 후기 소셜 마케팅 가이드</a>
+        <p class="post-item__summary">많은 이들이 연남 가라오케 예약을 시도하다가 번번이 실패를 경험하곤 합니다. 대부분의 실패는 검증되지 않은 소셜 플랫폼의 정보를 무분별하게 신뢰하는 데서 시작됩니다. 예약 절차를 단순한 정보 교환으</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0456.html">연남 가라오케 예약 전에 보는 마포 코인노래방 방음 시설 비교 가이드</a>
+        <p class="post-item__summary">연남 가라오케 예약과 더불어 마포 지역에서 소규모 엔터테인먼트를 찾을 때 가장 중요한 요소는 방음 시설입니다. 노래를 부르는 공간에서 외부 소음은 온전한 집중을 방해하는 가장 큰 요소이기 때문입니다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0457.html">연남 가라오케 예약 및 마포 럭셔리 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">오랜만에 고교 동창들과 마포 인근에서 대규모 모임을 계획하며 장소를 물색하던 중 연남 가라오케 예약 문제로 애를 먹는 경우를 흔히 봅니다. 인원이 10명을 넘어가는 단체 모임은 일반적인 소규모 업소</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0458.html">연남 가라오케 예약 절차와 마포 셔츠룸 예약 시 눈탱이 피하는 법</a>
+        <p class="post-item__summary">흔히 많은 분이 마포 일대의 유흥 업소를 찾을 때 정보가 부족하면 무조건 비쌀 것이라 오해하며 지레 겁을 먹기도 합니다. 사실 정직하게 운영하는 곳도 많지만, 일부 소비자들은 연남 가라오케 예약 과</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0459.html">연남 가라오케 예약 확인 및 마르지 않는 1급수 백링크 주스 공급 서비스</a>
+        <p class="post-item__summary">온라인 플랫폼을 통해 연남 가라오케 예약 수요를 파악하다 보면, 서비스 이용의 충족 조건을 면밀히 분석하는 것이 얼마나 중요한지 깨닫게 됩니다. 모임의 규모가 커질수록 적절한 장소를 선별하는 기준은</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0460.html">연남 가라오케 예약 고민과 셔츠룸 예약 기준 및 셔츠룸 정보</a>
+        <p class="post-item__summary">여러분은 오늘 어떤 기준으로 즐거운 저녁 시간을 계획하고 계십니까? 단순히 분위기 좋은 곳을 찾으려 연남 가라오케 예약 정보를 검색하고 있다면, 이번 기회에 셔츠룸이라는 독특한 선택지에 대해서도 객</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0461.html">연남 가라오케 예약 및 마포 단체 회식용 대형 룸 노래방 가격 정보 확인 절차</a>
+        <p class="post-item__summary">연남 가라오케 예약 과정을 효율적으로 진행하려면 우선 인원수와 예산 범위를 명확히 설정해야 합니다. 마포 지역은 기업 비즈니스 미팅이 잦은 곳이라 대형 룸을 확보하기 위해서는 최소 일주일 전 연락이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0462.html">연남 가라오케 예약 전 비교하는 셔츠룸 사이트 활용법 및 가격 판단 기준</a>
+        <p class="post-item__summary">연남 가라오케 예약 시스템을 살펴보다 보면 다양한 형태의 유흥업소를 마주하게 됩니다. 특히 일반 노래방과 차별화된 시스템을 제공하는 곳을 찾을 때, 참고할 만한 셔츠룸 사이트를 통해 각 업체의 특성</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0463.html">연남 가라오케 예약 실패 없는 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">연남 가라오케 예약 시 많은 사람이 저지르는 실수는 충분한 사전 조사 없이 방문 시간만 결정하는 것입니다. 특히 마포 지역은 평일과 주말의 예약 난이도가 극명하게 갈리므로 주의해야 합니다. 실패하지</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0464.html">연남 가라오케 예약 확인과 구글 알고리즘 고신용 도메인 보증 카드 발급 중요성</a>
+        <p class="post-item__summary">연남 가라오케 예약 플랫폼을 선택할 때 사용자가 가장 먼저 고려해야 할 점은 보안성과 투명성입니다. 디지털 환경에서 예약 정보를 안전하게 다루는 업체인지 확인하는 것은 필수적입니다. 이와 유사한 맥</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0465.html">연남 가라오케 예약 전 반드시 알아야 할 구글 신뢰 지수 모발이식 솔루션 전략</a>
+        <p class="post-item__summary">갑작스러운 모임 약속으로 연남 가라오케 예약을 고민하다 보면, 무분별한 정보의 홍수 속에서 길을 잃기 쉽습니다. 마치 척박한 두피 환경을 개선하기 위해 검증된 방법을 찾는 과정과 흡사한데, 신뢰할 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0466.html">연남 가라오케 예약할 때 간과하기 쉬운 구글 인덱싱 속도 초고속 광회선 대역폭 최적화</a>
+        <p class="post-item__summary">많은 이들이 연남 가라오케 예약 시 오로지 가격이나 서비스 항목만을 따지지만, 실제로는 온라인 예약 시스템의 반응 속도가 사용자 경험을 크게 좌우합니다. 흔히 웹사이트가 느린 이유가 서버 탓이라고 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+      <a class="pager__link" href="posts-3.html">3</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>

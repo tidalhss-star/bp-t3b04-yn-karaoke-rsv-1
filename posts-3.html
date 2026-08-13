@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (3/3) · t3b04-yn-karaoke-rsv-1</title>
+  <meta name="description" content="t3b04-yn-karaoke-rsv-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://yeonnam-song-info.node-link.shop/posts-3.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #0b0c10;
+      color: #e5e5e0;
+      font-family: 'Noto Serif KR', serif;
+      line-height: 1.75;
+      padding: 40px;
+    }
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+      border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+      padding-bottom: 32px;
+    }
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-style: italic;
+      color: #c5a880;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    nav { display: flex; gap: 32px; }
+    nav a {
+      color: #999995;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    nav a:hover { color: #c5a880; }
+    main { margin-bottom: 100px; }
+    .label {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      color: #c5a880;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 48px;
+    }
+    .article-body {
+      font-size: 1.15rem;
+      color: #d1d1ca;
+      font-weight: 300;
+      max-width: 780px;
+      margin-bottom: 80px;
+      text-align: justify;
+    }
+    .article-body p { margin-bottom: 28px; }
+    
+    .archive-section {
+      margin-top: 100px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: #c5a880;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+      padding-bottom: 12px;
+    }
+    .archive-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 100px;
+    }
+    .archive-card {
+      text-decoration: none;
+      color: #ffffff;
+      display: block;
+      border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+      padding-bottom: 32px;
+      transition: all 0.3s ease;
+    }
+    .archive-card:hover {
+      border-bottom-color: #c5a880;
+      transform: translateX(8px);
+    }
+    .archive-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      color: #f5f5f0;
+    }
+    .archive-card p {
+      color: #999995;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    /* PBN Recent Posts Feed */
+    .recent-posts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .recent-post-card {
+      background-color: #121317;
+      border: 1px solid rgba(197, 168, 128, 0.15);
+      border-radius: 4px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 240px;
+      transition: all 0.3s ease;
+    }
+    .recent-post-card:hover {
+      border-color: #c5a880;
+      background-color: #16181f;
+      transform: translateY(-2px);
+    }
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #c5a880;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 16px;
+      font-weight: bold;
+    }
+    .post-meta span {
+      border: 1px solid #c5a880;
+      padding: 2px 10px;
+      text-transform: uppercase;
+    }
+    .recent-post-card h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .recent-post-card p {
+      font-size: 0.95rem;
+      color: #bcbcbc;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more {
+      align-self: flex-start;
+      text-decoration: none;
+      color: #c5a880;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .read-more:hover {
+      color: #ffffff;
+    }
+    
+    footer {
+      border-top: 1px solid rgba(197, 168, 128, 0.2);
+      padding-top: 48px;
+      margin-top: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      font-family: 'Playfair Display', serif;
+      color: #555552;
+    }
+    footer a { color: #555552; text-decoration: none; margin-left: 20px; }
+    footer a:hover { color: #c5a880; }
+    
+    @media(max-width: 768px) {
+      header { flex-direction: column; gap: 24px; align-items: flex-start; }
+      h1 { font-size: 2.2rem; }
+      .archive-card h3 { font-size: 1.25rem; }
+      footer { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+  <meta property="og:title" content="글 목록 (3/3) · t3b04-yn-karaoke-rsv-1">
+  <meta property="og:description" content="t3b04-yn-karaoke-rsv-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://yeonnam-song-info.node-link.shop/posts-3.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="brand">VINYL.YN</a>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="sitemap.xml">SITEMAP</a>
+      </nav>
+    </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 44개 · 3/3 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-002-9lz5rw.html">연남 가라오케 예약 처음 알아볼 때 실제로 많이 묻는 질문 5가지</a>
+        <p class="post-item__summary">연남동 일대에서 친구들이나 직장 동료들과 함께 즐거운 시간을 보내기 위해 가라오케를 찾으시는 분들이 많습니다. 연남 가라오케 예약 절차를 처음 진행하다 보면 시스템이나 이용 방식이 생소하여 고민하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-001.html">연남 가라오케 예약의 영화적 영감</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-002.html">연남동 가라오케 위생 실태 폭로</a>
+        <p class="post-item__summary">어이, bro. 네이버 지도 켜고 별점 4.9짜리 찬양 후기에 속아서 눈탱이 제대로 맞고 가슴 쓰려 했던 경험 다들 있지? 오늘은 상수가 마포 바닥 10년 베테랑의 냉정한 시선으로, 조작된 인터넷 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/t3link-006.html">애송이들이 놓치는 NSA &amp;#39;프리즘&amp;#39; 슬라이드 7장, 그 속내를 파헤친다</a>
+        <p class="post-item__summary">내 말 듣고 ‘뭐 저런 걸 굳이’ 싶을 수도 있겠지만, 이게 바로 ‘데이터 과학자’의 시선이라는 거야. 특정 키워드의 구글 트렌드가 급등하는 시점과 실제 사건 발생 시점 사이에 얼마나 미묘한 시차 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <a class="pager__link" href="posts-2.html">2</a>
+      <span class="pager__current">3</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
